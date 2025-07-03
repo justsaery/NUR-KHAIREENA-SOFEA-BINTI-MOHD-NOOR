@@ -1,0 +1,176 @@
+<html>
+<head>
+  <title>My Family</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #e0a4e2;
+      --card-bg: #e8d9ea;
+      --text-color: #181618;
+      --accent-color: #201c21;
+      --warm-brown: #0d0d0d;
+      --soft-gold: #29052d;
+      --deep-ivory: #8c7a8d;
+      --text-dark: #ece8ed;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      padding: 2rem;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      color: var(--accent-color);
+    }
+
+    .nav-center {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .top-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .icon-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 2px solid var(--warm-brown);
+      background: var(--soft-gold);
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 16px;
+      color: var(--text-dark);
+      text-decoration: none;
+      box-shadow: 2px 4px 8px rgba(0,0,0,0.25);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .icon-button:hover {
+      background: var(--warm-brown);
+      color: var(--deep-ivory);
+      transform: scale(1.05);
+    }
+
+    .intro {
+      max-width: 800px;
+      margin: 2rem auto;
+      font-size: 1.1rem;
+      text-align: center;
+      color: #1c191b;
+      line-height: 1.6;
+    }
+
+    .slider-container {
+      overflow: hidden;
+      width: 100%;
+      margin: 2rem auto;
+      position: relative;
+    }
+
+    .slider-track {
+      display: flex;
+      gap: 2rem;
+      width: max-content;
+      animation: scrollLeft 25s linear infinite;
+    }
+
+    .slider-track.reverse {
+      animation: scrollRight 25s linear infinite;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      min-width: 250px;
+      max-width: 250px;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card .description {
+      padding: 1rem;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    @keyframes scrollLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @media (max-width: 600px) {
+      .card img {
+        height: 140px;
+      }
+      .card {
+        min-width: 200px;
+        max-width: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="nav-center">
+    <div class="top-buttons">
+      <a href="education.html" class="icon-button">← Back</a>
+      <a href="index.html" class="icon-button">Home</a>
+      <a href="aboutme.html" class="icon-button">About Me</a>
+      <a href="education.html" class="icon-button">Education</a>
+      <a href="friend.html" class="icon-button">Friend</a>
+      <a href="gallery.html" class="icon-button">Gallery</a>
+    </div>
+  </div>
+
+  <h1>My Beautiful Family</h1>
+
+  <div class="intro">
+    Here's a glimpse into the people who mean the world to me, each one special in their own way ✧˚ ༘ ⋆｡♡˚🏠︎.
+  </div>
+
+  <div class="slider-container">
+    <div class="slider-track">
+      <div class="card"><img src="image/19.jpg"><div class="my parent"><strong>My Parent</strong><br>Last Celebrate Hari Raya with my Dad.</div></div>
+      <div class="card"><img src="image/21.jpg"><div class="my family"><strong>My family</strong><br>First raya without my dad.</div></div>
+      <div class="card"><img src="image/20.jpg"><div class="my family"><strong>My family</strong><br>Second Raya without my dad</div></div>
+      <div class="card"><img src="image/22.jpg"><div class="my sister's wedding"><strong>my sister's wedding</strong><br> Full of Love</div></div>
+      <div class="card"><img src="image/23.jpg"><div class="my sibling"><strong>my sibling</strong><br>Sweet, gentle and supportive.</div></div>
+    
+      <div class="card"><img src="image/19.jpg"><div class="my parent"><strong>My Parent</strong><br>Last Celebrate Hari Raya with my Dad.</div></div>
+      <div class="card"><img src="image/21.jpg"><div class="my family"><strong>My family</strong><br>First raya without my dad.</div></div>
+      <div class="card"><img src="image/20.jpg"><div class="my family"><strong>My family</strong><br>Second Raya without my dad</div></div>
+      <div class="card"><img src="image/22.jpg"><div class="my sister's wedding"><strong>my sister's wedding</strong><br> Full of Love</div></div>
+      <div class="card"><img src="image/23.jpg"><div class="my sibling"><strong>my sibling</strong><br>Sweet, gentle and supportive.</div></div>
+    </div>
+  </div>
+
+</body>
+</html>
