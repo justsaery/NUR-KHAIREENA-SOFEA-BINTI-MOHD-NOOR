@@ -1,0 +1,385 @@
+<html>
+<head>
+  <title>SOFEA'S WEBSITE</title>
+  <link rel="stylesheet href="style.css>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    .slideshow {
+      position: fixed;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 0s;
+      z-index: -1;
+    }
+
+    .overlay, .game-section {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(5px);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .intro {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: left;
+    }
+
+    .tv-frame {
+      width: 160px;
+      height: 160px;
+      background: #3b3b3b;
+      border: 6px solid #a6977b;
+      border-radius: 50%;
+      padding: 8px;
+      position: relative;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
+      flex-shrink: 0;
+    }
+
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .text-content {
+      max-width: 400px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin: 10px 0;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .quote {
+      font-style: italic;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+    }
+
+    .flip-clock {
+      display: flex;
+      gap: 10px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .flip-unit {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 15px 20px;
+      border-radius: 12px;
+      font-size: 1em;
+      font-weight: 700;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+    }
+
+    .scroll-button {
+      background: #6d5844;
+      color: #fff;
+      padding: 12px 30px;
+      font-weight: 600;
+      font-size: 1em;
+      border: none;
+      margin: 10px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      border-radius: 6px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, .3);
+    }
+
+    .scroll-button:hover {
+      background: #5a4533;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: .9em;
+      color: #ffffffcc;
+      font-style: italic;
+    }
+
+    /* Mini Player Styles */
+    .mini-player {
+      margin: 20px auto;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .mini-player button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .mini-player .info {
+      flex: 1;
+    }
+
+    .mini-player .title {
+      font-weight: 600;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .mini-player .progress-container {
+      position: relative;
+      height: 4px;
+      background: #aaa;
+      margin-top: 5px;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .mini-player .progress {
+      height: 100%;
+      width: 0%;
+      background: #6d5844;
+      transition: width 0.2s;
+    }
+
+    @media (max-width: 600px) {
+      .intro {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .text-content {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="slideshow" id="slideshow"></div>
+<div class="overlay" id="home-section">
+  <div class="intro">
+    <div class="tv-frame">
+      <img src="image/profile.jpg" alt="sofea profile" class="profile-img">
+    </div>
+    <div class="text-content">
+      <h1>hello, sofea</h1>
+      <p class="quote">“In a world of chaos, K-pop is my happy place.”</p>
+      <div class="flip-clock">
+        <div class="flip-unit" id="day">--</div>
+        <div class="flip-unit" id="date">--</div>
+        <div class="flip-unit" id="time">--</div>
+      </div>
+
+      <div class="mini-player">
+        <button id="audio-control" onclick="toggleAudio()">▶️</button>
+        <div class="info">
+          <div class="title">Highway 1009 - ENHYPEN</div>
+          <div class="progress-container">
+            <div class="progress" id="audio-progress"></div>
+          </div>
+        </div>
+      </div>
+
+    
+      <a href="aboutme.html" class="scroll-button">About Me</a>
+      <button class="scroll-button" onclick="showGame()">Play Game</button>
+    </div>
+  </div>
+  <footer>
+    © 2025 Created with love by khaireena sofea <br>
+    <a href="https://www.instagram.com/khaireenaa._" target="_blank" style="color:#fff; text-decoration:none; margin: 0 10px;"> Instagram</a> |
+    <a href="https://www.tiktok.com/@justsaery" target="_blank" style="color:#fff; text-decoration:none; margin: 0 10px;"> TikTok</a>
+  </footer>
+</div>
+
+<div class="game-section" id="game-section" style="display:none; flex-direction: column;">
+  <h2>Snake Game</h2>
+  <div class="flip-clock">
+    <div class="flip-unit" id="day-game">--</div>
+    <div class="flip-unit" id="date-game">--</div>
+    <div class="flip-unit" id="time-game">--</div>
+  </div>
+
+  <canvas id="snakeCanvas" width="300" height="300" style="background:#111; border:2px solid #fff; margin: 20px 0;"></canvas>
+  <p id="snake-score" style="color: white; font-weight: bold;">Score: 0</p>
+
+  <button class="scroll-button" onclick="backToHome()">Back to Home</button>
+  <footer>
+    © 2025 Created with love by khaireena sofea <br>
+    <a href="https://www.instagram.com/khaireenaa._" target="_blank" style="color:#fff; text-decoration:none; margin: 0 10px;"> Instagram</a> |
+    <a href="https://www.tiktok.com/@justsaery" target="_blank" style="color:#fff; text-decoration:none; margin: 0 10px;"> TikTok</a>
+  </footer>
+</div>
+
+
+<audio id="bg-audio" src="audio/ssstik.io_1751530958996.mp3"></audio>
+
+<script>
+  const bgList = ["image/background.jpg"];
+  let bgIndex = 0;
+  const slideshow = document.getElementById("slideshow");
+
+  function changeBg() {
+    slideshow.style.backgroundImage = `url('${bgList[bgIndex]}')`;
+    bgIndex = (bgIndex + 1) % bgList.length;
+  }
+  changeBg();
+  setInterval(changeBg, 5000);
+
+  function updateTime() {
+    const now = new Date();
+    const dayName = now.toLocaleDateString('en-GB', { weekday: 'long' });
+    const date = now.toLocaleDateString('en-GB');
+    const time = now.toLocaleTimeString('en-US', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    });
+
+    document.getElementById("day").textContent = dayName;
+    document.getElementById("date").textContent = date;
+    document.getElementById("time").textContent = time;
+
+    document.getElementById("day-game").textContent = dayName;
+    document.getElementById("date-game").textContent = date;
+    document.getElementById("time-game").textContent = time;
+  }
+
+  updateTime();
+  setInterval(updateTime, 1000);
+
+  const canvas = document.getElementById("snakeCanvas");
+  const ctx = canvas.getContext("2d");
+  const box = 15;
+  let snake = [{ x: 5 * box, y: 5 * box }];
+  let food = {
+    x: Math.floor(Math.random() * 20) * box,
+    y: Math.floor(Math.random() * 20) * box
+  };
+  let score = 0;
+  let direction = "RIGHT";
+  let gameInterval;
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft" && direction !== "RIGHT") direction = "LEFT";
+    else if (e.key === "ArrowUp" && direction !== "DOWN") direction = "UP";
+    else if (e.key === "ArrowRight" && direction !== "LEFT") direction = "RIGHT";
+    else if (e.key === "ArrowDown" && direction !== "UP") direction = "DOWN";
+  });
+
+  function drawGame() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < snake.length; i++) {
+      ctx.fillStyle = i === 0 ? "#7CFC00" : "#ADFF2F";
+      ctx.fillRect(snake[i].x, snake[i].y, box, box);
+    }
+
+    ctx.fillStyle = "#FF6347";
+    ctx.fillRect(food.x, food.y, box, box);
+
+    let headX = snake[0].x;
+    let headY = snake[0].y;
+
+    if (direction === "LEFT") headX -= box;
+    if (direction === "RIGHT") headX += box;
+    if (direction === "UP") headY -= box;
+    if (direction === "DOWN") headY += box;
+
+    if (headX === food.x && headY === food.y) {
+      score++;
+      document.getElementById("snake-score").textContent = "Score: " + score;
+      food = {
+        x: Math.floor(Math.random() * 20) * box,
+        y: Math.floor(Math.random() * 20) * box
+      };
+    } else {
+      snake.pop();
+    }
+
+    if (
+      headX < 0 || headY < 0 || headX >= canvas.width || headY >= canvas.height ||
+      snake.some((seg) => seg.x === headX && seg.y === headY)
+    ) {
+      clearInterval(gameInterval);
+      alert("Game Over! Your score: " + score);
+      backToHome();
+      return;
+    }
+
+    let newHead = { x: headX, y: headY };
+    snake.unshift(newHead);
+  }
+
+  function showGame() {
+    document.getElementById("home-section").style.display = "none";
+    document.getElementById("game-section").style.display = "flex";
+    snake = [{ x: 5 * box, y: 5 * box }];
+    score = 0;
+    direction = "RIGHT";
+    document.getElementById("snake-score").textContent = "Score: 0";
+    clearInterval(gameInterval);
+    gameInterval = setInterval(drawGame, 150);
+  }
+
+  function backToHome() {
+    document.getElementById("game-section").style.display = "none";
+    document.getElementById("home-section").style.display = "flex";
+    clearInterval(gameInterval);
+  }
+
+  const audio = document.getElementById("bg-audio");
+  const audioBtn = document.getElementById("audio-control");
+  const progressBar = document.getElementById("audio-progress");
+
+  function toggleAudio() {
+    if (audio.paused) {
+      audio.play();
+      audioBtn.textContent = "⏸️";
+    } else {
+      audio.pause();
+      audioBtn.textContent = "▶️";
+    }
+  }
+
+  audio.addEventListener("timeupdate", () => {
+    const percent = (audio.currentTime / audio.duration) * 100;
+    progressBar.style.width = percent + "%";
+  });
+</script>
+
+</body>
+</html>
