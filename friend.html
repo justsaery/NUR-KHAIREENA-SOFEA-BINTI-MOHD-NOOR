@@ -1,0 +1,236 @@
+<html>
+<head>
+  <title>My Friends</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #e0a4e2;
+      --card-bg: #ffffff;
+      --text-color: #181818;
+      --accent-color: #2a282b;
+      --warm-brown: #0d0d0d;
+      --soft-gold: #29052d;
+      --deep-ivory: #333033;
+      --text-dark: #ece8ed;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      padding: 2rem;
+    }
+
+    .nav-center {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .top-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .icon-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 2px solid var(--warm-brown);
+      background: var(--soft-gold);
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 16px;
+      color: var(--text-dark);
+      text-decoration: none;
+      box-shadow: 2px 4px 8px rgba(0,0,0,0.25);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .icon-button:hover {
+      background: var(--warm-brown);
+      color: var(--deep-ivory);
+      transform: scale(1.05);
+    }
+
+    h1 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      color: var(--accent-color);
+    }
+
+    .intro {
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #0f0e0f;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .flip-card {
+      perspective: 1000px;
+    }
+
+    .flip-inner {
+      width: 100%;
+      height: 250px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+    }
+
+    .flip-front,
+    .flip-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      backface-visibility: hidden;
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+
+    .flip-front {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .flip-front img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    .flip-front .friend-name {
+      padding: 10px;
+      font-weight: 500;
+      color: var(--text-color);
+    }
+
+    .flip-back {
+      background-color: var(--accent-color);
+      color: white;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .img-hover-wrap:hover .flip-inner {
+      transform: rotateY(180deg);
+    }
+
+    @media (max-width: 600px) {
+      .flip-inner {
+        height: 220px;
+      }
+
+      .flip-front img {
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="nav-center">
+    <div class="top-buttons">
+      <a href="family.html" class="icon-button">← Back</a>
+      <a href="index.html" class="icon-button">Home</a>
+      <a href="aboutme.html" class="icon-button">About Me</a>
+      <a href="education.html" class="icon-button">Education</a>
+      <a href="family.html" class="icon-button">Family</a>
+      <a href="gallery.html" class="icon-button">Gallery</a>
+    </div>
+  </div>
+
+  <h1>My Friends</h1>
+  <div class="intro">
+    Hover on the image to flip the card to see description about my friends.
+  </div>
+
+  <div class="gallery">
+    
+    <div class="flip-card"><div class="img-hover-wrap"><div class="flip-inner">
+      <div class="flip-front"><img src="image/nami.jpg"><div class="friend-name">Tsunami</div></div>
+      <div class="flip-back"><h3>Nami</h3><p>My closest friend since high school. Always supportive!</p></div>
+    </div></div></div>
+
+    <div class="flip-card"><div class="img-hover-wrap"><div class="flip-inner">
+      <div class="flip-front"><img src="image/mina.jpg"><div class="friend-name">Syahmina</div></div>
+      <div class="flip-back"><h3>Mina</h3><p> The most hardworking girl, funny and full of energy.</p></div>
+    </div></div></div>
+
+    <div class="flip-card"><div class="img-hover-wrap"><div class="flip-inner">
+      <div class="flip-front"><img src="image/syeda.jpg"><div class="friend-name">Syahida</div></div>
+      <div class="flip-back"><h3>Syeda</h3><p>The most blur one, specky girl, and people pleaser.</p></div>
+    </div></div></div>
+
+    <div class="flip-card"><div class="img-hover-wrap"><div class="flip-inner">
+      <div class="flip-front"><img src="image/diba.jpg"><div class="friend-name">Adibah</div></div>
+      <div class="flip-back"><h3>Diba</h3><p>ex Terengganu's shooter, last child and stubborn.</p></div>
+    </div></div></div>
+
+    <div class="flip-card"><div class="img-hover-wrap"><div class="flip-inner">
+      <div class="flip-front"><img src="image/syira.jpg"><div class="friend-name">Insyirah</div></div>
+      <div class="flip-back"><h3>Syira</h3><p>My unexpected friend since sem 1 until now.</p></div>
+    </div></div></div>
+
+    <div class="flip-card"><div class="img-hover-wrap"><div class="flip-inner">
+      <div class="flip-front"><img src="image/mun.jpg"><div class="friend-name">Muneerah</div></div>
+      <div class="flip-back"><h3>Mun</h3><p> our tailor, love to sew, and creative one.</p></div>
+    </div></div></div>
+
+    <div class="flip-card"><div class="img-hover-wrap"><div class="flip-inner">
+      <div class="flip-front"><img src="image/tasya.jpg"><div class="friend-name">Natasya</div></div>
+      <div class="flip-back"><h3>Tasya</h3><p>Gives amazing advice.</p></div>
+    </div></div></div>
+
+    <div class="flip-card"><div class="img-hover-wrap"><div class="flip-inner">
+      <div class="flip-front"><img src="image/imane.jpg"><div class="friend-name">Iman</div></div>
+      <div class="flip-back"><h3>Imane</h3><p>The most rich one, always hudnozone and kindfull one.</p></div>
+    </div></div></div>
+
+    <div class="flip-card"><div class="img-hover-wrap"><div class="flip-inner">
+      <div class="flip-front"><img src="image/oya.jpg"><div class="friend-name">Sofea</div></div>
+      <div class="flip-back"><h3>Oya</h3><p>The most Johorian.</p></div>
+    </div></div></div>
+
+    <div class="flip-card"><div class="img-hover-wrap"><div class="flip-inner">
+      <div class="flip-front"><img src="image/ila cute dooh.jpg"><div class="friend-name">Syahila</div></div>
+      <div class="flip-back"><h3>Ila</h3><p>kind, small one, and always help friends.</p></div>
+    </div></div></div>
+
+    <div class="flip-card"><div class="img-hover-wrap"><div class="flip-inner">
+      <div class="flip-front"><img src="image/tasa.jpg"><div class="friend-name">Tasya</div></div>
+      <div class="flip-back"><h3>Tasa</h3><p>The oldest one, quiet but kind.</p></div>
+    </div></div></div>
+
+    <div class="flip-card"><div class="img-hover-wrap"><div class="flip-inner">
+      <div class="flip-front"><img src="image/amy.jpg"><div class="friend-name">Amylya</div></div>
+      <div class="flip-back"><h3>Amy</h3><p>Funniest friend in the group.</p></div>
+    </div></div></div>
+
+  </div>
+
+</body>
+</html>
