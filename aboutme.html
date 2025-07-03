@@ -1,0 +1,213 @@
+<html>
+<head>
+  <title>about me</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-ivory: #e0a4e2;
+      --soft-gold: #29052d;
+      --warm-brown: #0d0d0d;
+      --deep-ivory: #8c7a8d;
+      --text-dark: #ece8ed;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-ivory);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+    .top-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 40px auto;
+    }
+    .icon-button {
+      border: 2px solid var(--warm-brown);
+      background: var(--soft-gold);
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 16px;
+      color: var(--text-dark);
+      text-decoration: none;
+      box-shadow: 2px 4px 8px rgba(0,0,0,0.25);
+      transition: transform 0.3s ease, 0.3s ease;
+    }
+    .icon-button:hover {
+      background: var(--warm-brown);
+      color: var(--deep-ivory);
+      transform: scale(1.05);
+    }
+
+    .slider-wrapper {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .slider {
+      display: flex;
+      width: 300%;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      width: 100vw;
+      padding: 40px 20px;
+      flex-shrink: 0;
+      text-align: justify;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .photo-stack {
+      width: 600px;
+      height: 350px;
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .photo-stack img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: 14px solid var(--soft-gold);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+      border-radius: 10px;
+    }
+
+    .title {
+      font-size: 50px;
+      color: var(--warm-brown);
+      margin-bottom: 20px;
+      font-weight: 700;
+      animation: glow 10s ease-in-out infinite;
+    }
+
+    .description {
+      font-size: 18px;
+      max-width: 800px;
+      line-height: 1.7;
+    }
+
+    .signature {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 40px;
+      color: var(--warm-brown);
+      background: rgba(255,255,255,0.5);
+      border-radius: 50%;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+      user-select: none;
+    }
+
+    .arrow-left {
+      left: -50px;
+    }
+
+    .arrow-right {
+      right: -50px;
+    }
+
+    @keyframes glow {
+      0%, 100% { text-shadow: 0 0 10px #fff; }
+      50% { text-shadow: 0 0 20px #ff7efc; }
+    }
+
+    @media (max-width: 768px) {
+      .photo-stack { width: 100%; height: auto; }
+      .title { font-size: 38px; text-align: center; }
+      .arrow-left { left: -20px; }
+      .arrow-right { right: -20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="top-buttons">
+    <a href="index.html" class="icon-button">Home</a>
+    <a href="education.html" class="icon-button">Education</a>
+    <a href="family.html" class="icon-button">Family</a>
+    <a href="friend.html" class="icon-button">Friend</a>
+    <a href="gallery.html" class="icon-button">Gallery</a>
+  </nav>
+
+  <div class="slider-wrapper">
+    <div class="slider" id="slider">
+
+      <div class="slide">
+        <div class="photo-stack">
+          <div class="arrow arrow-left" onclick="prevSlide()">&#10094;</div>
+          <img src="image/sofea 1.jpg" alt="sofea profile" />
+          <div class="arrow arrow-right" onclick="nextSlide()">&#10095;</div>
+        </div>
+        <h1 class="title">annyeong, i'm sofea ⋆.˚ ᡣ𐭩 .𖥔˚</h1>
+        <p class="description">
+          Hello, my name is Nur Khaireena Sofea binti Mohd Noor, people call me Sofea. I'm 21 years old. I was born and lived in Terengganu. I have 8 siblings including me and i'm last child. I love go to beach for healing. After PKP, i do part-time job as a shop assistant until now for pocket money. <br><br>
+          people always thinks me weak because of i'm last child but i always provide everything by myself without asking my parent's money. i'm someone that always work hard for anything that i want.
+        </p>
+        <p class="signature">With warmth, <strong>SOFEA</strong></p>
+      </div>
+
+      <div class="slide">
+        <div class="photo-stack">
+          <div class="arrow arrow-left" onclick="prevSlide()">&#10094;</div>
+          <img src="image/sofea 2.jpg" alt="My Hobby" />
+          <div class="arrow arrow-right" onclick="nextSlide()">&#10095;</div>
+        </div>
+        <h1 class="title">My Hobby ♡</h1>
+        <p class="description">
+          My hobby is watching K-drama, travelling and being kpopers. since i was child, i always dream want go to Korea, As someone who loves ENHYPEN, I find myself constantly inspired by their journey, talent, and deep bond as a group. Their music isn’t just something I listen to, it’s something I feel. Supporting them has become a source of happiness, strength, and connection.
+        </p>
+      </div>
+
+      <div class="slide">
+        <div class="photo-stack">
+          <div class="arrow arrow-left" onclick="prevSlide()">&#10094;</div>
+          <img src="image/sofea 3.jpg" alt="Personal Values" />
+          <div class="arrow arrow-right" onclick="nextSlide()">&#10095;</div>
+        </div>
+        <h1 class="title">My Personal Values ✿</h1>
+        <p class="description">
+          I believe in kindness, respect, and sincerity. I value being soft-hearted yet strong-minded. I try to be someone who brings warmth and comfort to others, even in small ways.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const totalSlides = document.querySelectorAll('.slide').length;
+
+    function updateSlide() {
+      const slider = document.getElementById('slider');
+      slider.style.transform = `translateX(-${currentIndex * 100}vw)`;
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateSlide();
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateSlide();
+    }
+  </script>
+
+</body>
+</html>
