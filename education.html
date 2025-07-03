@@ -1,0 +1,189 @@
+<html>
+<head>
+  <title>My Education</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #e0a4e2;
+      --card-bg: #ffffff;
+      --text-color: #333;
+      --accent-color: #231f25;
+      --warm-brown: #0d0d0d;
+      --soft-gold: #29052d;
+      --deep-ivory: #8c7a8d;
+      --text-dark: #ece8ed;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      padding: 2rem;
+    }
+
+    .nav-center {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .top-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .icon-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 2px solid var(--warm-brown);
+      background: var(--soft-gold);
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 16px;
+      color: var(--text-dark);
+      text-decoration: none;
+      box-shadow: 2px 4px 8px rgba(0,0,0,0.25);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .icon-button:hover {
+      background: var(--warm-brown);
+      color: var(--deep-ivory);
+      transform: scale(1.05);
+    }
+
+    h1 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      color: var(--accent-color);
+    }
+
+    .intro {
+      max-width: 500px;
+      margin: 0 auto 1rem;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .education-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .edu-card {
+      background-color: var(--card-bg);
+      border-radius: 15px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+      overflow: hidden;
+    }
+
+    .edu-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .edu-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 1px solid #eee;
+    }
+
+    .edu-content {
+      padding: 1.5rem;
+    }
+
+    .edu-content h3 {
+      margin-bottom: 0.5rem;
+      color: var(--accent-color);
+      font-size: 1.3rem;
+    }
+
+    .edu-content span {
+      font-weight: 500;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .edu-content p {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      .nav-center {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="nav-center">
+    <div class="top-buttons">
+      <a href="aboutme.html" class="icon-button">← Back</a>
+      <a href="index.html" class="icon-button">Home</a>
+      <a href="aboutme.html" class="icon-button">About Me</a>
+      <a href="family.html" class="icon-button">Family</a>
+      <a href="friend.html" class="icon-button">Friend</a>
+      <a href="gallery.html" class="icon-button">Gallery</a>
+    </div>
+  </div>
+
+  <h1>My Education</h1>
+
+  <div class="intro">
+    Education has shaped my journey and aspirations. Each phase brought new lessons, challenges, and unforgettable memories.
+  </div>
+
+  <section class="education-section">
+    <div class="edu-card">
+      <img src="image/uitm.jpg" alt="UiTM">
+      <div class="edu-content">
+        <h3>UNIVERSITY</h3>
+        <span>Universiti Teknologi MARA (UiTM)</span>
+        <span>2023 – 2025</span>
+        <p>Focused on data management, record keeping, and digital information systems. Learned technical and soft skills through both coursework and industrial training.</p>
+      </div>
+    </div>
+
+    <div class="edu-card">
+      <img src="image/smkkgb.jpg" alt="SMK">
+      <div class="edu-content">
+        <h3>HIGH SCHOOL</h3>
+        <span>SMK KOMPLEKS GONG BADAK</span>
+        <span>2017 – 2021</span>
+        <p>Achieved strong results in core subjects including Bahasa Melayu, English, History, and Science. Participated in various extracurricular and leadership activities.</p>
+      </div>
+    </div>
+
+    <div class="edu-card">
+      <img src="image/skkgb.webp" alt="SK">
+      <div class="edu-content">
+        <h3>PRIMARY SCHOOL</h3>
+        <span>SK KOMPLEKS GONG BADAK</span>
+        <span>2011 – 2016</span>
+        <p>Built my academic foundation and participated in school events, speech competitions, and co-curricular clubs that developed my confidence and teamwork.</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
